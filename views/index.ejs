@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node 爬虫实例</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Node 爬虫实例</h1>
+    </header>
+    <div class="content">
+        <% posts.forEach(post => { %>
+            <div class="post_item">
+                <h3>
+                    <a href="<%= post.url %>" class="post_item-title" target="_blank">
+                        <%= post.title %>
+                    </a>
+                </h3>
+                <p class="post_item_summary">
+                    <%= post.summary %>
+                </p>
+                <p>
+                    <a class="post_item_author" href="<%= post.authorHref %>">
+                        <%= post.author %>
+                    </a>
+                </p>
+            </div>
+        <% }); %>
+    </div>
+    <div class="pager">
+        <button class="btn next" type="button">爬取更多</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
